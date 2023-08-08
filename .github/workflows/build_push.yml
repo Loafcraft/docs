@@ -10,8 +10,13 @@ jobs:
   bump:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - uses: tool3/docsify-action@master
-      with:
-        github_token: ${{ secrets.GH_ACCESS_TOKEN }}
-        branch: gh-pages
+      - uses: actions/checkout@master
+      - name: get email and name
+          run: |
+            git config --global user.email "aurorataro@foxmail.com"
+            git config --global user.name aurorataro"
+      - name : Deploy
+          uses: tool3/docsify-action@master
+          with:
+            github_token: ${{ secrets.GH_ACCESS_TOKEN }}
+            branch: gh-pages
