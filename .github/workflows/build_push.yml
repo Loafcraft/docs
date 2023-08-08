@@ -11,12 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: get email and name
-          run: |
-            git config --global user.email "aurorataro@foxmail.com"
-            git config --global user.name aurorataro"
-      - name : Deploy
-          uses: tool3/docsify-action@master
+      - run: git config --global user.email "aurorataro@foxmail.com"
+      - run: git config --global user.name aurorataro"
+      - uses: tool3/docsify-action@master
           with:
             github_token: ${{ secrets.GH_ACCESS_TOKEN }}
             branch: gh-pages
