@@ -1,4 +1,4 @@
-# Summary
+<!-- docs/_sidebar.md -->
 
 * [前言](README.md)
 * [教程](tutorial/README.md)
